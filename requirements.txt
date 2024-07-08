@@ -1,2 +1,6 @@
 Flask
 Flask-SQLAlchemy
+Flask-WTF
+psycopg2-binary
+werkzeug
+Flask-WTF

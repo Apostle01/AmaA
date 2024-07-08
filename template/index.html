@@ -2,25 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Reviews</title>
 </head>
 <body>
     <h1>Book Reviews</h1>
-    <form action="/add" method="post">
-        <input type="text" name="title" placeholder="Title" required>
-        <input type="text" name="author" placeholder="Author" required>
-        <textarea name="review" placeholder="Review" required></textarea>
-        <button type="submit">Add Book</button>
-    </form>
     <ul>
         {% for book in books %}
-        <li>
-            <strong>{{ book.title }}</strong> by {{ book.author }}<br>
-            {{ book.review }}<br>
-            <a href="/delete/{{ book.id }}">Delete</a>
-        </li>
+            <li>{{ book.title }} by {{ book.author }}: {{ book.review }}</li>
         {% endfor %}
     </ul>
+    <form action="/add" method="post">
+        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="author" placeholder="Author">
+        <textarea name="review" placeholder="Review"></textarea>
+        <button type="submit">Add Book</button>
+    </form>
 </body>
 </html>
+
